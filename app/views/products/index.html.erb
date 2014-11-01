@@ -5,6 +5,7 @@
     <tr>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -12,6 +13,7 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.title %></td>
+        <td><%= image_tag product.image(:thumb) %></td>
         <td><%= link_to 'Show', product %></td>
       </tr>
     <% end %>
