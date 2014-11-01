@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'json'
+
+file = File.read('db/products.seeds.json')
+products_json = JSON.parse(file)
+
+products_json.each do |product|
+  Product.create(product)
+end
