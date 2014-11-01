@@ -1,21 +1,18 @@
-<h1>Listing products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= image_tag product.image(:thumb) %></td>
-        <td><%= link_to 'Show', product %></td>
-      </tr>
+<div class="container clearfix">
+    <% @products.each_with_index do |product, index| %>
+        <div class="span_<%= index < 2 ? '2' : '1' %>_of_4">
+            <figure class="has-hover">
+                <%= image_tag product.image(:medium) %>
+                <figcaption>
+                    <p class="description-short"></p>
+                    <span></span>
+                    <a href="" class="btn-primary">stare</a>
+                </figcaption>
+            </figure>
+            <h3 class="item-title"><%= link_to product.title, product %></h3>
+            <p>
+                <a href="" class="item-price"></a>
+            </p>
+        </div>
     <% end %>
-  </tbody>
-</table>
+</div>
