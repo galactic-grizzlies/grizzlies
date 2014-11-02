@@ -22,4 +22,58 @@
             <%= link_to 'Add to the cart', checkout_add_url(product_id: @product.id), remote: true, method: :put, class: "btn-primary btn-wide" %>
         </div><!-- end of item-info-big -->
     </div><!-- end of block block-item clearfix -->
+    <div class="block-title">
+        Also purchased with this product
+    </div>
+</div><!-- end of container -->
+
+<div class="container no-pd clearfix">
+    <% @order_recomendation.each do |similar_product| %>
+        <div class="tile">
+            <figure class="item has-hover">
+                <%= image_tag similar_product.image(:medium)%>
+                <figcaption class="figcaption">
+                    <!-- <p class="description-short">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus minus necessitatibu
+                    </p> -->
+                    <span class="item-delivery"><%= similar_product.delivery_from %>-<%= similar_product.delivery_to %> days</span>
+                    <%= link_to "stare", similar_product, class: "btn-primary" %>
+                </figcaption>
+            </figure>
+            <div class="item-short-info">
+                <h3 class="item-title"><%= link_to similar_product.title, similar_product %></h3>
+                <p>
+                    <span class="item-price"><%= similar_product.price %> UAH</span>
+                </p>
+            </div>
+        </div>
+    <% end %>
+</div><!-- end of container -->
+
+<div class="container">
+    <div class="block-title">
+        Also watched with this product
+    </div>
+</div><!-- end of container -->
+<div class="container no-pd clearfix">
+    <% @view_recomendation.each do |similar_product| %>
+        <div class="tile">
+            <figure class="item has-hover">
+                <%= image_tag similar_product.image(:medium)%>
+                <figcaption class="figcaption">
+                    <!-- <p class="description-short">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus minus necessitatibu
+                    </p> -->
+                    <span class="item-delivery"><%= similar_product.delivery_from %>-<%= similar_product.delivery_to %> days</span>
+                    <%= link_to "stare", similar_product, class: "btn-primary" %>
+                </figcaption>
+            </figure>
+            <div class="item-short-info">
+                <h3 class="item-title"><%= link_to similar_product.title, similar_product %></h3>
+                <p>
+                    <span class="item-price"><%= similar_product.price %> UAH</span>
+                </p>
+            </div>
+        </div>
+    <% end %>
 </div><!-- end of container -->
