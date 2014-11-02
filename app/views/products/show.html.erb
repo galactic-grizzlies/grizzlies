@@ -29,7 +29,7 @@
 
 <div class="container no-pd clearfix">
     <% @order_recomendation.each do |similar_product| %>
-        <div class="tile">
+        <div class="tile shown">
             <figure class="item has-hover">
                 <%= image_tag similar_product.image(:medium)%>
                 <figcaption class="figcaption">
@@ -57,7 +57,7 @@
 </div><!-- end of container -->
 <div class="container no-pd clearfix">
     <% @view_recomendation.each do |similar_product| %>
-        <div class="tile">
+        <div class="tile shown">
             <figure class="item has-hover">
                 <%= image_tag similar_product.image(:medium)%>
                 <figcaption class="figcaption">
@@ -77,3 +77,10 @@
         </div>
     <% end %>
 </div><!-- end of container -->
+
+<div class="add-too-shopping-cart-modal js-add-too-shopping-cart-modal">
+    <a href="#" class="js-close-modal btn-close">&times;</a>
+    <h3>I noticed you added a new item... Me like it</h3>
+    <%= link_to 'Continue shopping', products_url, class: 'lnk-big' %>
+    <%= link_to 'View cart', checkout_url, class: 'btn-primary btn-popup' %>
+</div>
