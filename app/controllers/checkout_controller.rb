@@ -36,5 +36,6 @@ class CheckoutController < ApplicationController
   end
 
   def success
+    render layout: 'layouts/base'
   end
 end
