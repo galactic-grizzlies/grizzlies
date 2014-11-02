@@ -1,8 +1,10 @@
 <h1><%= @product.title %></h1>
 
+<%= link_to 'Add', checkout_add_url(product_id: @product.id), remote: true, method: :put %>
+
 <ul>
   <li>View: <%= @product.view_count %></li>
-  <li>Add: <%= @product.add_count %></li>
+  <li>Add: <span class="js-product-add-count"><%= @product.add_count %></span></li>
   <li>Orde: <%= @product.order_count %></li>
 </ul>
 
@@ -27,3 +29,12 @@
   <% end %>
 </ul>
 <%= link_to 'Back', products_path %>
+
+<div class="add-too-shopping-cart-modal js-add-too-shopping-cart-modal">
+  <span><a href="#" class="js-close-modal">X</a></span>
+  <h3>I noticed you added a new item... Me like it</h3>
+  <div>
+    <%= link_to 'Continue shopping', products_url %>
+    <%= link_to 'View cart', checkout_url, class: 'btn' %>
+  </div>
+</div>

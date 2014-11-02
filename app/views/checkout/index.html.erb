@@ -1,0 +1,9 @@
+<h1>Checkout</h1>
+<ul>
+  <% @shopping_cart.each do |product| %>
+    <li class="js-shopping-cart-item-<%= product.id %>">
+      <%= product.title %>
+      <%= link_to 'X', checkout_delete_url(product_id: product.id), remote: true, method: :delete %>
+    </li>
+  <% end %>
+</ul>

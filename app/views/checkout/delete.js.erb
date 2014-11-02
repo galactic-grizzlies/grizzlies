@@ -1,0 +1,5 @@
+$('.js-shopping-cart-item').text(<%= shopping_cart_count %>);
+
+<% unless @deleted_product_id.nil? %>
+  $('.js-shopping-cart-item-<%= @deleted_product_id %>').remove();
+<% end %>

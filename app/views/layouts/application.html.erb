@@ -2,8 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Grizzlies</title>
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -17,7 +17,7 @@
 		    <header class="header">
 		        <div class="container">
 		            <div class="mini-cart">
-		                <span class="products-quantity">2</span>
+		                <span class="products-quantity js-shopping-cart-item"><%= link_to shopping_cart_count, checkout_url %></span>
 		            </div>
 		        </div><!-- end of container -->
 		    </header><!-- end of header -->
