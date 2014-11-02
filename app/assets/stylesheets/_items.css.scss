@@ -14,9 +14,13 @@
 	}
 
 	.figcaption {
-		position: relative;
+		position: absolute;
 		height: 50px;
+		width: 100%;
+		bottom: -100%;
+		left: 0;
 		background: $white;
+		transition: bottom 0.35s;
 
 		.description-short,
 		.item-delivery,
@@ -54,6 +58,10 @@
 		&:before,
 		.description-short {
 			opacity: 1;
+		}
+
+		.figcaption {
+			bottom: 0;
 		}
 	}
 }
