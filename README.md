@@ -29,3 +29,19 @@ rails server
 
 When database is prepared and rails server is running you can just open project in your browser:
 [http://localhost:3000](http://localhost:3000)
+
+
+## Architecture decisions
+
+### Product recomendations
+
+Product recommendation has been implemented using [Colloborative filtering](http://en.wikipedia.org/wiki/Collaborative_filtering) with [Jaccard index](http://en.wikipedia.org/wiki/Jaccard_index) to determine similarities between items.
+
+We've used open source gem [predictor](https://github.com/Pathgather/predictor) that implements fast and efficient recommendations and predictions using Ruby & Redis.
+
+### Product sorting
+
+Products in catalog are sorted by three counters:
+- order count
+- view count
+- add count
