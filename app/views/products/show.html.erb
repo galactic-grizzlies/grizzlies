@@ -1,2 +1,23 @@
 <h1><%= @product.title %></h1>
+
+<h4>View</h4>
+<ul>
+  <% @view_recomendation.each do |similar_product| %>
+    <li><%= link_to similar_product.title, similar_product %></li>
+  <% end %>
+</ul>
+
+<h4>Add</h4>
+<ul>
+  <% @add_recomendation.each do |similar_product| %>
+    <li><%= link_to similar_product.title, similar_product %></li>
+  <% end %>
+</ul>
+
+<h4>Order</h4>
+<ul>
+  <% @order_recomendation.each do |similar_product| %>
+    <li><%= link_to similar_product.title, similar_product %></li>
+  <% end %>
+</ul>
 <%= link_to 'Back', products_path %>
