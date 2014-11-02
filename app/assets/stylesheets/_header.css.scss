@@ -1,0 +1,30 @@
+.header {
+	height: 52px;
+	padding: 7px 0;
+	background-color: #292b37;
+}
+
+.mini-cart {
+	float: right;
+	width: 23px;
+	height: 30px;
+	background: image-url("basket.svg");
+	position: relative;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-right: 10px;
+	.products-quantity {
+		position: absolute;
+		right: -10px;
+		bottom: -10px;
+		display: block;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		font-size: 10px;
+		line-height: 20px;
+		color: #fff;
+		background-color: $green;
+		border-radius: 50%;
+	}
+}

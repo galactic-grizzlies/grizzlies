@@ -1,5 +1,9 @@
+@import "normalize-rails";
+@import "variables";
 @import "grid";
+@import "general";
 @import "header";
+@import "items";
 
 .add-too-shopping-cart-modal {
   display: none;

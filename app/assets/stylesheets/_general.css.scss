@@ -1,14 +1,81 @@
+/* ==========================================================================
+    GENERAL STYLES
+========================================================================== */
+
+html,
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input,
+textarea,
+input:active,
+textarea:active,
+:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 /*  clearfix  */
 .clearfix:before,
 .clearfix:after {
-	content:"";
-	display:table;
+	content: "";
+	display: table;
 }
 
 .clearfix:after {
-	clear:both;
+	clear: both;
 }
 
 .clearfix {
-    zoom:1; /* For IE 6/7 */
+    zoom: 1; /* For IE 6/7 */
+}
+
+.page-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    padding-top: 190px;
+    min-height: 100%;
+	background-image: image-url("bg-top.jpg");
+    padding-top: 300px;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content-wrapper {
+	background: #fff;
+}
+
+.container {
+	max-width: 1240px;
+    width: 90%;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.no-pd {
+	padding: 0 !important
+}
+
+p, figure {
+	margin: 0;
 }

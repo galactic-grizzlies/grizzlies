@@ -1,24 +1,28 @@
-.span_2_of_4,
-.span_1_of_4 {
+.tile-big,
+.tile {
 	display: block;
 	float:left;
+	padding: 0 20px;
+	margin: 40px 0;
 }
 
-.span_2_of_4 {
+.tile-big {
 	width: 50%; 
+	height: 590px;
 }
 
-.span_1_of_4 {
+.tile {
 	width: 25%; 
+	height: 370px;
 }
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
 @media only screen and (max-width: 480px) {
-	.span_2_of_4 {
+	.tile-big {
 		width: 100%; 
 	}
-	.span_1_of_4 {
+	.tile {
 		width: 100%; 
 	}
 }

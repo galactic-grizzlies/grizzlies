@@ -8,5 +8,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'paperclip', '~> 4.2'
 gem 'predictor'
+gem 'autoprefixer-rails'
+gem 'normalize-rails'
 gem 'spring', group: :development
-gem 'sdoc', '~> 0.4.0', group: :doc

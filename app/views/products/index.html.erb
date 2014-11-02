@@ -1,17 +1,19 @@
-<div class="container clearfix">
+<div class="container no-pd clearfix">
     <% @products.each_with_index do |product, index| %>
-        <div class="span_<%= index < 2 ? '2' : '1' %>_of_4">
-            <figure class="has-hover">
-                <%= image_tag product.image(:medium) %>
-                <figcaption>
-                    <p class="description-short"></p>
-                    <span></span>
+        <div class="<%= index < 2 ? 'tile-big' : 'tile' %>">
+            <figure class="item has-hover">
+                <%= image_tag product.image(index < 2 ? :big : :medium)%>
+                <figcaption class="figcaption">
+                    <!-- <p class="description-short">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus minus necessitatibu
+                    </p> -->
+                    <span class="item-delivery"><%= product.delivery_from %>-<%= product.delivery_to %> days</span>
                     <a href="" class="btn-primary">stare</a>
                 </figcaption>
             </figure>
             <h3 class="item-title"><%= link_to product.title, product %></h3>
             <p>
-                <a href="" class="item-price"></a>
+                <span class="item-price"><%= product.price %> UAH</span>
             </p>
         </div>
     <% end %>

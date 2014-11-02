@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Grizzlies</title>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
@@ -14,16 +15,20 @@
 	</head>
 	<body>
 		<div class="page-wrapper">
-		    <header class="header">
-		        <div class="container">
-		            <div class="mini-cart">
-		                <span class="products-quantity js-shopping-cart-item"><%= link_to shopping_cart_count, checkout_url %></span>
-		            </div>
-		        </div><!-- end of container -->
-		    </header><!-- end of header -->
+			<div class="content-wrapper">
+			    <header class="header">
+			        <div class="container">
+			        	<%= link_to checkout_url, class: 'mini-cart' do %>
+			        		<span class="products-quantity js-shopping-cart-item">
+			        			<%= shopping_cart_count %>
+			        		</span>
+			        	<% end %>ss
+			        </div><!-- end of container -->
+			    </header><!-- end of header -->
 
-			<%= yield %>
+				<%= yield %>
 
+			</div><!-- end of content-wrapper -->
 		</div><!-- end of page-wrapper -->
 
 	</body>
