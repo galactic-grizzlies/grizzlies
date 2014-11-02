@@ -2,19 +2,21 @@
     <% @products.each_with_index do |product, index| %>
         <div class="<%= index < 2 ? 'tile-big' : 'tile' %>">
             <figure class="item has-hover">
-                <%= image_tag product.image(index < 2 ? :big : :medium)%>
+                <%= image_tag product.image(index < 2 ? :big : :medium), class: "item-img"%>
                 <figcaption class="figcaption">
                     <!-- <p class="description-short">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus minus necessitatibu
                     </p> -->
                     <span class="item-delivery"><%= product.delivery_from %>-<%= product.delivery_to %> days</span>
-                    <a href="" class="btn-primary">stare</a>
+                    <%= link_to "stare", product, class: "btn-primary" %>
                 </figcaption>
             </figure>
-            <h3 class="item-title"><%= link_to product.title, product %></h3>
-            <p>
-                <span class="item-price"><%= product.price %> UAH</span>
-            </p>
+            <div class="item-short-info">
+                <h3 class="item-title"><%= link_to product.title, product %></h3>
+                <p>
+                    <span class="item-price"><%= product.price %> UAH</span>
+                </p>
+            </div>
         </div>
     <% end %>
 </div>

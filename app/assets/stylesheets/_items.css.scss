@@ -64,7 +64,12 @@
 	}
 }
 
+.item-short-info {
+	height: 80px;
+}
+
 .item-title {
+	overflow: hidden;
 	margin: 5px 0;
 	font-weight: normal;
 	a {
