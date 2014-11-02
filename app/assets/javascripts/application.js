@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require modernizr
+//= require eventie
+//= require eventEmitter
+//= require imagesLoaded
+//= require classie
+//= require animOnScroll
 //= require_tree .

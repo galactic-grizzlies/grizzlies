@@ -4,6 +4,7 @@
 	float:left;
 	padding: 0 20px;
 	margin: 20px 0;
+  opacity: 0;
 }
 
 .tile-big {
@@ -17,7 +18,7 @@
 @media only screen and (max-width: 1070px) {
 
 	.tile {
-		width: 50%; 
+		width: 50%;
 	}
 }
 
@@ -25,9 +26,33 @@
 
 @media only screen and (max-width: 580px) {
 	.tile-big {
-		width: 100%; 
+		width: 100%;
 	}
 	.tile {
-		width: 100%; 
+		width: 100%;
 	}
+}
+
+.animated-list {
+  perspective: 1300px;
+}
+
+.animated-list > .animate {
+  transform-style: preserve-3d;
+  transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+  animation: fallPerspective .8s ease-in-out forwards;
+}
+
+.shown {
+  opacity: 1;
+}
+
+@keyframes fallPerspective {
+  0% {
+  }
+
+  100% {
+  	transform: translateZ(0px) translateY(0px) rotateX(0deg);
+  	opacity: 1;
+  }
 }

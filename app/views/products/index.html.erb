@@ -1,6 +1,6 @@
-<div class="container no-pd clearfix">
+<ul class="container no-pd clearfix animated-list" id="grid">
     <% @products.each_with_index do |product, index| %>
-        <div class="<%= index < 2 ? 'tile-big' : 'tile' %>">
+        <li class="<%= index < 2 ? 'tile-big' : 'tile' %>">
             <figure class="item has-hover">
                 <%= image_tag product.image(index < 2 ? :big : :medium), class: "item-img"%>
                 <figcaption class="figcaption">
@@ -17,6 +17,6 @@
                     <span class="item-price"><%= product.price %> UAH</span>
                 </p>
             </div>
-        </div>
+        </li>
     <% end %>
-</div>
+</ul>
