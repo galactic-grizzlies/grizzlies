@@ -120,6 +120,7 @@
 }
 
 .btn-primary {
+	display: inline-block;
 	height: 26px;
 	padding: 0 12px;
 	background-color: $green;
@@ -133,6 +134,15 @@
 	&:hover {
 		background-color: darken($green, 5%);
 	}
+}
+
+.btn-wide {
+	width: 100%;
+	max-width: 510px;
+	margin: 20px auto 0;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
 }
 
 .description-short {

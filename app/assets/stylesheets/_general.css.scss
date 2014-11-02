@@ -6,6 +6,7 @@ html,
 body {
     font-family: 'Lato', Arial, sans-serif;
     height: 100%;
+    color: $text;
 }
 
 * {
@@ -63,6 +64,7 @@ a:hover {
 
 .content-wrapper {
 	background: #f2f3f3;
+    padding-bottom: 30px;
 }
 
 .container {
@@ -74,6 +76,11 @@ a:hover {
 
 .no-pd {
 	padding: 0 !important
+}
+
+.text {
+    font-size: 16px;
+    line-height: 26px;
 }
 
 p, figure {

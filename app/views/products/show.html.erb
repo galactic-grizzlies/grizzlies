@@ -1,40 +1,25 @@
-<h1><%= @product.title %></h1>
-
-<%= link_to 'Add', checkout_add_url(product_id: @product.id), remote: true, method: :put %>
-
-<ul>
-  <li>View: <%= @product.view_count %></li>
-  <li>Add: <span class="js-product-add-count"><%= @product.add_count %></span></li>
-  <li>Orde: <%= @product.order_count %></li>
-</ul>
-
-<h4>View</h4>
-<ul>
-  <% @view_recomendation.each do |similar_product| %>
-    <li><%= link_to similar_product.title, similar_product %></li>
-  <% end %>
-</ul>
-
-<h4>Add</h4>
-<ul>
-  <% @add_recomendation.each do |similar_product| %>
-    <li><%= link_to similar_product.title, similar_product %></li>
-  <% end %>
-</ul>
-
-<h4>Order</h4>
-<ul>
-  <% @order_recomendation.each do |similar_product| %>
-    <li><%= link_to similar_product.title, similar_product %></li>
-  <% end %>
-</ul>
-<%= link_to 'Back', products_path %>
-
-<div class="add-too-shopping-cart-modal js-add-too-shopping-cart-modal">
-  <span><a href="#" class="js-close-modal">X</a></span>
-  <h3>I noticed you added a new item... Me like it</h3>
-  <div>
-    <%= link_to 'Continue shopping', products_url %>
-    <%= link_to 'View cart', checkout_url, class: 'btn' %>
-  </div>
-</div>
+<div class="container">
+    <div class="block block-item clearfix">
+        <%= image_tag @product.image(:big), class: "item-img"%>
+        <div class="item-info-full">
+            <h2 class="item-title"><%= @product.title %></h2>
+            <ul class="item-statistics">
+                <li>Watched: <span><%= @product.view_count %></span></li>
+                <li>Added to the cart: <span><%= @product.add_count %></span></li>
+                <li>Ordered: <span><%= @product.order_count %></span></li>
+            </ul>
+            <p>
+                <span class="item-price"><%= @product.price %> UAH</span>
+            </p>
+            <div class="part">
+                <h3 class="title-part">Short description:</h3>
+                <p class="text"><%= @product.description %></p>
+            </div>
+            <div class="part">
+                <h3 class="title-part">Delivery:</h3>
+                <span class="item-delivery"><%= @product.delivery_from %>-<%= @product.delivery_to %> days</span>
+            </div>
+            <%= link_to 'Add to the cart', checkout_add_url(product_id: @product.id), remote: true, method: :put, class: "btn-primary btn-wide" %>
+        </div><!-- end of item-info-big -->
+    </div><!-- end of block block-item clearfix -->
+</div><!-- end of container -->
