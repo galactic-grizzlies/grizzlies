@@ -60,3 +60,51 @@
 	font-size: 14px;
 	text-transform: uppercase;
 }
+
+@media only screen and (min-width: 601px) and (max-width: 920px) {
+	.block-item {
+		.item-img,
+		.item-info-full {
+			width: 100%;
+			height: auto;
+		}
+
+		.item-img {
+			width: 50%;
+			float: left;
+			margin-right: 20px;
+		}
+
+		.item-title {
+			margin-top: 0;
+		}
+
+		.item-info-full {
+			float: none;
+			padding-left: 20px;
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.block-item {
+		.item-img,
+		.item-info-full {
+			width: 100%;
+			height: auto;
+		}
+
+		.item-img {
+			float: none;
+		}
+
+		.item-info-full {
+			margin-top: 20px;
+			float: none;
+		}
+
+		.text {
+			font-size: 14px;
+		}
+	}
+}
