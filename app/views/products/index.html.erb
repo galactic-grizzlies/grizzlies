@@ -4,9 +4,7 @@
             <figure class="item has-hover">
                 <%= image_tag product.image(index < 2 ? :big : :medium), class: "item-img"%>
                 <figcaption class="figcaption">
-                    <!-- <p class="description-short">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus minus necessitatibu
-                    </p> -->
+                    <p class="description-short"><%= product.short_description %></p>
                     <span class="item-delivery"><%= product.delivery_from %>-<%= product.delivery_to %> days</span>
                     <%= link_to "stare", product, class: "btn-primary" %>
                 </figcaption>
