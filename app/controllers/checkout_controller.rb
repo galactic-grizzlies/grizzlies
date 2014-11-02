@@ -23,6 +23,15 @@ class CheckoutController < ApplicationController
   end
 
   def order
+    session[:shopping_cart].each do |product_id|
+      product = Product.find(product_id)
+      product.increment!(:order_count)
+      product.add_recomendation :order, session[:session_id]
+    end
+
+    session[:shopping_cart] = []
+
+    redirect_to checkout_success_url
   end
 
   def success

@@ -7,3 +7,10 @@
     </li>
   <% end %>
 </ul>
+
+
+<%= form_tag checkout_order_url do %>
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Checkout") %>
+<% end %>
