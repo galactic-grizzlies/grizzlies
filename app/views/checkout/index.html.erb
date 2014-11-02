@@ -1,6 +1,6 @@
 <div class="container clearfix">
 	<% if @shopping_cart.empty? %>
-		<h1>Your shopping cart is empty. C'mon, <%= link_to 'go grab some stuff', products_url, class: 'lnk-big' %></h1>
+		<h1 class="title-big">Your shopping cart is empty. C'mon, <%= link_to 'go grab some stuff', products_url, class: 'lnk-big' %></h1>
 	<% else %>
 		<div class="block block-cart">
 			<h2 class="title-big">Stuff in your cart</h2>
