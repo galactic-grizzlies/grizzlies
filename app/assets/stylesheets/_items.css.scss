@@ -130,6 +130,8 @@
 	text-transform: uppercase;
 	border-radius: 5px;
 	transition: all .3s;
+	border: none;
+	outline: none;
 
 	&:hover {
 		background-color: darken($green, 5%);

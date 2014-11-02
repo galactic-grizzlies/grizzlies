@@ -1,16 +1,49 @@
-<h1>Checkout</h1>
-<ul>
-  <% @shopping_cart.each do |product| %>
-    <li class="js-shopping-cart-item-<%= product.id %>">
-      <%= product.title %>
-      <%= link_to 'X', checkout_delete_url(product_id: product.id), remote: true, method: :delete %>
-    </li>
-  <% end %>
-</ul>
-
-
-<%= form_tag checkout_order_url do %>
-  <%= label_tag(:name, "Name:") %>
-  <%= text_field_tag(:name) %>
-  <%= submit_tag("Checkout") %>
-<% end %>
+<div class="container clearfix">
+	<% if @shopping_cart.empty? %>
+		<h1>Your shopping cart is empty. C'mon, <%= link_to 'go grab some stuff', products_url, class: 'lnk-big' %></h1>
+	<% else %>
+		<div class="block block-cart">
+			<h2 class="title-big">Stuff in your cart</h2>
+			<table class="table-cart">
+				<thead>
+					<th>Name</th>
+					<th>Price</th>
+					<th></th>
+				</thead>
+				<tbody>
+					<% @shopping_cart.each do |product| %>
+						<tr>
+							<td>
+				                <%= image_tag product.image(:thumb), class: "item-img"%>
+								<%= link_to product.title, product, class: "item-title-small"%>
+							</td>
+							<td>
+								<span class="item-price"><%= product.price %> UAH</span>
+							</td>
+							<td>
+						      <%= link_to 'delete', checkout_delete_url(product_id: product.id), method: :delete, class: 'lnk-small' %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">Estimated total: <span>1234</span> UAH</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div><!-- end of block-cart -->
+		<div class="block block-checkout">
+			<h2 class="title-big">Checkout information</h2>
+			<%= form_tag checkout_order_url do %>
+			  <%= label_tag(:name, "Name:", class: "label-primary") %>
+			  <%= text_field_tag(:name, nil, placeholder: "John Doe", required: true, class: "input-primary") %>
+			  <%= label_tag(:email, "E-mail:", class: "label-primary") %>
+			  <%= email_field_tag(:email, nil, placeholder: "example@mail.com", required: true, class: "input-primary") %>
+			  <%= label_tag(:phone, "Phone:", class: "label-primary") %>
+			  <%= phone_field_tag(:phone, nil, placeholder: "+380000000000", required: true, pattern: '\+[0-9]{12}', class: "input-primary") %>
+			  <%= submit_tag("Check Out!", class: "btn-primary btn-wide") %>
+			<% end %>
+		</div><!-- end of block-checkout -->
+	<% end %>
+</div>

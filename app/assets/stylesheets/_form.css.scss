@@ -1,0 +1,17 @@
+.label-primary {
+	display: inline-block;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin: 15px 0;
+}
+
+.input-primary {
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	font-size: 12px;
+	border: 1px solid darken($gray, 5%);
+	padding: 5px 10px;
+	line-height: 40px;
+	border-radius: 5px;
+}

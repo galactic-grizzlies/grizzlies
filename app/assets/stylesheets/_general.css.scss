@@ -83,6 +83,18 @@ a:hover {
     line-height: 26px;
 }
 
+.lnk-small {
+    font-size: 15px;
+    color: $link;
+    text-decoration: underline;
+    transition: all .2s;
+
+    &:hover {
+        text-decoration: underline;
+        color: darken($link, 5%);
+    }
+}
+
 p, figure {
 	margin: 0;
 }

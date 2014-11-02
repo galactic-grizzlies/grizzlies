@@ -20,6 +20,7 @@ class CheckoutController < ApplicationController
 
   def delete
     @deleted_product_id = session[:shopping_cart].delete(params[:product_id])
+    redirect_to checkout_url
   end
 
   def order
