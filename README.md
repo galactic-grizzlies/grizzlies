@@ -1,6 +1,9 @@
 grizzlies
 =========
 
+## Demo
+[https://grizzlies.herokuapp.com/](https://grizzlies.herokuapp.com/)
+
 ## How to run the project
 
 First of all you nead to have vagrant and virtualbox installed on yor system.
