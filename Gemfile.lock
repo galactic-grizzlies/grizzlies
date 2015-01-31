@@ -55,13 +55,13 @@ GEM
     mime-types (2.4.3)
     minitest (5.4.2)
     multi_json (1.10.1)
-    mysql2 (0.3.16)
     normalize-rails (3.0.1)
     paperclip (4.2.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    pg (0.18.1)
     predictor (2.3.0)
       redis (>= 3.0.0)
     rack (1.5.2)
@@ -77,6 +77,11 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.7)
       sprockets-rails (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.1.7)
       actionpack (= 4.1.7)
       activesupport (= 4.1.7)
@@ -117,11 +122,12 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   jquery-rails
-  mysql2
   normalize-rails
   paperclip (~> 4.2)
+  pg
   predictor
   rails (= 4.1.7)
+  rails_12factor
   sass-rails (~> 4.0.3)
   spring
   turbolinks
